@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0412E8472864F77D444B931B /* Pods_genomelinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CA633E5625DAABA8005E9 /* Pods_genomelinks.framework */; };
 		9464B246211521A40010AE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B245211521A40010AE19 /* AppDelegate.swift */; };
 		9464B248211521A40010AE19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B247211521A40010AE19 /* ViewController.swift */; };
 		9464B24B211521A40010AE19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9464B249211521A40010AE19 /* Main.storyboard */; };
 		9464B24D211521A70010AE19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9464B24C211521A70010AE19 /* Assets.xcassets */; };
 		9464B250211521A70010AE19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9464B24E211521A70010AE19 /* LaunchScreen.storyboard */; };
+		9464B258211528820010AE19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9464B257211528820010AE19 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D356C58CB852CE5A15B2421 /* Pods-genomelinks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genomelinks.release.xcconfig"; path = "Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks.release.xcconfig"; sourceTree = "<group>"; };
 		9464B242211521A40010AE19 /* genomelinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = genomelinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464B245211521A40010AE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9464B247211521A40010AE19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		9464B24C211521A70010AE19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9464B24F211521A70010AE19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9464B251211521A70010AE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9464B257211528820010AE19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A16CA633E5625DAABA8005E9 /* Pods_genomelinks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_genomelinks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AC4582D495D8B5FB5118D5 /* Pods-genomelinks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genomelinks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0412E8472864F77D444B931B /* Pods_genomelinks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				9464B244211521A40010AE19 /* genomelinks */,
 				9464B243211521A40010AE19 /* Products */,
+				D7E513E8972F07D3BBD95114 /* Pods */,
+				FCE959C0E2A1BFA0BEC13888 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +69,26 @@
 				9464B24C211521A70010AE19 /* Assets.xcassets */,
 				9464B24E211521A70010AE19 /* LaunchScreen.storyboard */,
 				9464B251211521A70010AE19 /* Info.plist */,
+				9464B257211528820010AE19 /* GoogleService-Info.plist */,
 			);
 			path = genomelinks;
+			sourceTree = "<group>";
+		};
+		D7E513E8972F07D3BBD95114 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC4582D495D8B5FB5118D5 /* Pods-genomelinks.debug.xcconfig */,
+				7D356C58CB852CE5A15B2421 /* Pods-genomelinks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FCE959C0E2A1BFA0BEC13888 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A16CA633E5625DAABA8005E9 /* Pods_genomelinks.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9464B254211521A70010AE19 /* Build configuration list for PBXNativeTarget "genomelinks" */;
 			buildPhases = (
+				0FB99EE10A60D2965CF0C5F7 /* [CP] Check Pods Manifest.lock */,
 				9464B23E211521A40010AE19 /* Sources */,
 				9464B23F211521A40010AE19 /* Frameworks */,
 				9464B240211521A40010AE19 /* Resources */,
+				C96BF3A28E5D6471722C672B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +152,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				9464B250211521A70010AE19 /* LaunchScreen.storyboard in Resources */,
+				9464B258211528820010AE19 /* GoogleService-Info.plist in Resources */,
 				9464B24D211521A70010AE19 /* Assets.xcassets in Resources */,
 				9464B24B211521A40010AE19 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FB99EE10A60D2965CF0C5F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-genomelinks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C96BF3A28E5D6471722C672B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9464B23E211521A40010AE19 /* Sources */ = {
@@ -278,15 +349,13 @@
 		};
 		9464B255211521A70010AE19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5AC4582D495D8B5FB5118D5 /* Pods-genomelinks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MASXSG88H5;
 				INFOPLIST_FILE = genomelinks/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mousapps.genomelinks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +365,13 @@
 		};
 		9464B256211521A70010AE19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D356C58CB852CE5A15B2421 /* Pods-genomelinks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MASXSG88H5;
 				INFOPLIST_FILE = genomelinks/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mousapps.genomelinks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
