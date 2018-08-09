@@ -33,6 +33,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="OeQ-Lf-bi1" kind="show" id="25O-cr-jul"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -41,12 +44,32 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="LNn-pK-x4H">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ArL-NQ-4Na"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ArL-NQ-4Na">
+                            <connections>
+                                <segue destination="ylJ-Gw-y17" kind="show" id="H3n-Mo-tB1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELE-GS-Sge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1574" y="40"/>
+        </scene>
+        <!--AddEvent-->
+        <scene sceneID="vDK-Q5-LGe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddEvent" id="ylJ-Gw-y17" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMp-xn-e0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2362" y="-184"/>
+        </scene>
+        <!--Event-->
+        <scene sceneID="foz-Df-l6L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" id="OeQ-Lf-bi1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0J-V5-5qD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="16"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qrR-D8-rey">
