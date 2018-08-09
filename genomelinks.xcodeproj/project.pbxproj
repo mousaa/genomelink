@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0412E8472864F77D444B931B /* Pods_genomelinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CA633E5625DAABA8005E9 /* Pods_genomelinks.framework */; };
-		94470FFB211CE63F006E1418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94470FFA211CE63F006E1418 /* GoogleService-Info.plist */; };
 		9464B246211521A40010AE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B245211521A40010AE19 /* AppDelegate.swift */; };
 		9464B248211521A40010AE19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B247211521A40010AE19 /* ViewController.swift */; };
 		9464B24B211521A40010AE19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9464B249211521A40010AE19 /* Main.storyboard */; };
@@ -18,7 +17,6 @@
 
 /* Begin PBXFileReference section */
 		7D356C58CB852CE5A15B2421 /* Pods-genomelinks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genomelinks.release.xcconfig"; path = "Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks.release.xcconfig"; sourceTree = "<group>"; };
-		94470FFA211CE63F006E1418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9464B242211521A40010AE19 /* genomelinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = genomelinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464B245211521A40010AE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9464B247211521A40010AE19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				9464B24C211521A70010AE19 /* Assets.xcassets */,
 				9464B24E211521A70010AE19 /* LaunchScreen.storyboard */,
 				9464B251211521A70010AE19 /* Info.plist */,
-				94470FFA211CE63F006E1418 /* GoogleService-Info.plist */,
 			);
 			path = genomelinks;
 			sourceTree = "<group>";
@@ -152,7 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9464B250211521A70010AE19 /* LaunchScreen.storyboard in Resources */,
-				94470FFB211CE63F006E1418 /* GoogleService-Info.plist in Resources */,
 				9464B24D211521A70010AE19 /* Assets.xcassets in Resources */,
 				9464B24B211521A40010AE19 /* Main.storyboard in Resources */,
 			);
