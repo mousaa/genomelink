@@ -28,10 +28,12 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - OAuthSwift (1.2.2)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - OAuthSwift (from `https://github.com/OAuthSwift/OAuthSwift.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -44,6 +46,15 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
 
+EXTERNAL SOURCES:
+  OAuthSwift:
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
+
+CHECKOUT OPTIONS:
+  OAuthSwift:
+    :commit: bd648297a5b2294a9304b12f03ae962cefe6ed5f
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
+
 SPEC CHECKSUMS:
   Firebase: e08fb0795f35707aeb1d8a715c731c45bdf6fd56
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
@@ -53,7 +64,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  OAuthSwift: 6ab6259b5c79c6a07d455d8dfaddad6058b2b5c3
 
-PODFILE CHECKSUM: 2692da0815ba0ac894ebae27579b92fae69ae9d3
+PODFILE CHECKSUM: 0c9fcd579ed7b4be9c666adb6a4d61220b65d7b0
 
 COCOAPODS: 1.5.3

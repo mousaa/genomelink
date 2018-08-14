@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OAuthSwift
 
 class AddEvent: UIViewController {
     override func viewDidLoad() {
