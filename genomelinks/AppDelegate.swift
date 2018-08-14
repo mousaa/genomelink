@@ -12,6 +12,20 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if url.host == nil
+        {
+            return true;
+        }
+        let urlString = url.absoluteString
+        let queryArray = urlString.split(separator:"/")
+        print(queryArray)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainNC = storyboard.instantiateViewController(withIdentifier: "mainNavController")
+        window?.rootViewController = mainNC
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
