@@ -9,6 +9,11 @@
 import UIKit
 
 class AddEvent: UIViewController {
+    
+    @IBAction func callAPI(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "http://127.0.0.1:5000/")!)
+    }
+    
     override func viewDidLoad() {
         navigationItem.rightBarButtonItem = UIBarButtonItem()
         navigationItem.rightBarButtonItem?.title = "Create"
