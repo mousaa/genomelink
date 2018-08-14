@@ -2,6 +2,7 @@
 # platform :ios, '9.0'
 
 target 'genomelinks' do
+  pod 'Alamofire', '~> 4.7'
   pod 'Firebase/Core'
   pod 'Firebase/Database'	
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks

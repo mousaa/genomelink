@@ -11,10 +11,10 @@ import UIKit
 class AddEvent: UIViewController {
     override func viewDidLoad() {
         navigationItem.rightBarButtonItem = UIBarButtonItem()
-        navigationItem.rightBarButtonItem?.title = "hehe"
+        navigationItem.rightBarButtonItem?.title = "Create"
         navigationItem.title = "Add Event"
         navigationItem.backBarButtonItem = UIBarButtonItem()
-        navigationItem.backBarButtonItem?.title = "Back"
+        navigationItem.backBarButtonItem?.title = "Cancel"
     }
 }
 
