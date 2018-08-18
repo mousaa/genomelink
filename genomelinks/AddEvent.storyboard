@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xT4-Q6-raA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xT4-Q6-raA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-b1-5OH">
                                 <rect key="frame" x="8" y="217.5" width="359" height="50.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMt-Fo-QL7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMt-Fo-QL7">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -86,19 +86,11 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWy-uP-6Ma">
-                                <rect key="frame" x="0.0" y="667" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="Txo-cc-XyW"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9RR-b1-5OH" firstAttribute="leading" secondItem="y2b-5M-DVO" secondAttribute="leading" constant="8" id="31c-pD-iWs"/>
-                            <constraint firstItem="cWy-uP-6Ma" firstAttribute="trailing" secondItem="y2b-5M-DVO" secondAttribute="trailing" id="ASh-Io-4kz"/>
                             <constraint firstItem="2Kg-m5-5hW" firstAttribute="leading" secondItem="y2b-5M-DVO" secondAttribute="leading" constant="8" id="BVi-oO-ggZ"/>
-                            <constraint firstItem="cWy-uP-6Ma" firstAttribute="top" secondItem="y2b-5M-DVO" secondAttribute="bottom" id="K0U-9R-drP"/>
                             <constraint firstItem="2Kg-m5-5hW" firstAttribute="top" secondItem="AHm-07-rnT" secondAttribute="bottom" constant="8" id="Mxf-BA-dAp"/>
                             <constraint firstItem="y2b-5M-DVO" firstAttribute="trailing" secondItem="AHm-07-rnT" secondAttribute="trailing" constant="8" id="SRC-xQ-APk"/>
                             <constraint firstItem="Z1M-Wa-hxA" firstAttribute="leading" secondItem="y2b-5M-DVO" secondAttribute="leading" constant="8" id="TCQ-SZ-xHl"/>
@@ -108,11 +100,15 @@
                             <constraint firstItem="y2b-5M-DVO" firstAttribute="trailing" secondItem="Z1M-Wa-hxA" secondAttribute="trailing" constant="8" id="non-st-LlJ"/>
                             <constraint firstItem="AHm-07-rnT" firstAttribute="top" secondItem="Z1M-Wa-hxA" secondAttribute="bottom" constant="8" id="ufy-LM-Tiz"/>
                             <constraint firstItem="y2b-5M-DVO" firstAttribute="trailing" secondItem="9RR-b1-5OH" secondAttribute="trailing" constant="8" id="v5i-g8-Fk7"/>
-                            <constraint firstItem="cWy-uP-6Ma" firstAttribute="leading" secondItem="y2b-5M-DVO" secondAttribute="leading" id="vJU-do-sow"/>
                             <constraint firstItem="AHm-07-rnT" firstAttribute="leading" secondItem="y2b-5M-DVO" secondAttribute="leading" constant="8" id="vQu-TE-Ov6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y2b-5M-DVO"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="kPQ-GS-mTd" id="Ngf-sN-e9r"/>
+                        <outlet property="cityLabel" destination="PW7-1k-IuX" id="OSi-zV-Xwu"/>
+                        <outlet property="eventNameLabel" destination="6Fe-4A-iF6" id="Qeb-Ug-gO8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC3-KT-wxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

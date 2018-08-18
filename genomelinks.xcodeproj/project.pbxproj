@@ -21,6 +21,7 @@
 		94C32BA0211CECE20022FF20 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C32B9F211CECE20022FF20 /* Event.storyboard */; };
 		94C32BA2211CED070022FF20 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C32BA1211CED070022FF20 /* AddEvent.storyboard */; };
 		94D6F79A212237E60003229F /* AddEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6F799212237E60003229F /* AddEvent.swift */; };
+		94EA899B2127965800C7BBA9 /* hot-reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA899A2127965800C7BBA9 /* hot-reload.swift */; };
 		BD5CD9B521235E7E0087F5E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5CD9B421235E7E0087F5E0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		94C32B9F211CECE20022FF20 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		94C32BA1211CED070022FF20 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
 		94D6F799212237E60003229F /* AddEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvent.swift; sourceTree = "<group>"; };
+		94EA899A2127965800C7BBA9 /* hot-reload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hot-reload.swift"; sourceTree = "<group>"; };
 		A16CA633E5625DAABA8005E9 /* Pods_genomelinks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_genomelinks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD5CD9B421235E7E0087F5E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C5AC4582D495D8B5FB5118D5 /* Pods-genomelinks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genomelinks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		9464B244211521A40010AE19 /* genomelinks */ = {
 			isa = PBXGroup;
 			children = (
+				94EA89992127962A00C7BBA9 /* Extensions */,
 				9464B245211521A40010AE19 /* AppDelegate.swift */,
 				9464B247211521A40010AE19 /* ViewController.swift */,
 				9464B249211521A40010AE19 /* Main.storyboard */,
@@ -96,6 +99,14 @@
 				94D6F799212237E60003229F /* AddEvent.swift */,
 			);
 			path = genomelinks;
+			sourceTree = "<group>";
+		};
+		94EA89992127962A00C7BBA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				94EA899A2127965800C7BBA9 /* hot-reload.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D7E513E8972F07D3BBD95114 /* Pods */ = {
@@ -239,6 +250,7 @@
 				1634706C21222E5400C8BFED /* TagsTableViewCell.swift in Sources */,
 				1634706E21222F6400C8BFED /* TagsViewCell.swift in Sources */,
 				9464B248211521A40010AE19 /* ViewController.swift in Sources */,
+				94EA899B2127965800C7BBA9 /* hot-reload.swift in Sources */,
 				9464B246211521A40010AE19 /* AppDelegate.swift in Sources */,
 				BD5CD9B521235E7E0087F5E0 /* LoginViewController.swift in Sources */,
 				1634706A21222B8F00C8BFED /* RootViewController.swift in Sources */,

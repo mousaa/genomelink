@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIApplication.shared.open(URL(string: "http://127.0.0.1:5000/")!)
+//        UIApplication.shared.open(URL(string: "http://127.0.0.1:5000/")!)
 //                let oauthswift = OAuth2Swift(
 //                    consumerKey: "uz8Z3mO5QIyq6hqTbDUlaBQdGDuUIgzSgngWiPHJ",
 //                    consumerSecret: "y9wXPM5TsZBhkRwwFm5huwjdRYaA6PRC3KBBIrP9OcKj27uRHFrbVaVdqbxU4MyHoxVgYM1hdNdtfcdsIU6sctBQIuCwlzrFXJZPHHndM5PB47t9ZaJApYHNvPW04fle",        // No secret required
