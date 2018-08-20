@@ -8,12 +8,14 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
         if url.host == nil
         {
             return true;
@@ -21,6 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let urlString = url.absoluteString
         let queryArray = urlString.split(separator:"/")
         print(queryArray)
+        
+//        let query = ["eye-color", "beard-thickness", "morning-person"]
+//
+//        for key in query {
+//            let url: String = "https://genomelink.io/v1/enterprise/reports/" + key + "/?population=european"
+//            var request = URLRequest(url:  NSURL(string: url)! as URL)
+//            request.httpMethod = "POST"
+//            request.setValue("Bearer \(queryArray[1])", forHTTPHeaderField: "Authorization")
+//
+//            Alamofire.request(request).responseJSON { (responseObject) -> Void in
+//                print(responseObject)
+//            }
+//        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainNC = storyboard.instantiateViewController(withIdentifier: "mainNavController")
         window?.rootViewController = mainNC
