@@ -17,13 +17,47 @@ class RootViewController: UITableViewController {
     
 }
 
+@IBDesignable class PaddingLabel: UILabel {
+    
+    @IBInspectable var topInset: CGFloat = 0.0
+    @IBInspectable var bottomInset: CGFloat = 0.0
+    @IBInspectable var leftInset: CGFloat = 8.0
+    @IBInspectable var rightInset: CGFloat = 0.0
+    
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + leftInset + rightInset,
+                      height: size.height + topInset + bottomInset)
+    }
+}
+
 extension RootViewController {
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        let label = PaddingLabel()
+        label.text = (section == 0) ? "Tags" : "Events"
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 22.0)
+        label.frame = CGRect(x: 5, y: 5, width: tableView.frame.width, height: 35)
+        view.addSubview(label)
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45
+    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return CGFloat(180)
+            return 70
         }
-        return CGFloat(60)
+        return 60
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -30,7 +30,7 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.layer.cornerRadius = 10.0
         
         cell.label.text = "goose"
-        cell.image.image = UIImage(named:"goose")!
+//        cell.image.image = UIImage(named:"goose")!
         
         return cell
     }
