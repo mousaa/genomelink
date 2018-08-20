@@ -10,6 +10,7 @@ import UIKit
 
 class TagsTableViewCell: UITableViewCell {
 
+    var labelTexts : [String] = ["DEPRESSION", "EXTROVERSION", "INTELLIGENCE", "OPENNESS"]
     @IBOutlet weak var collectionView: UICollectionView!
     
     func setCell() {
@@ -20,8 +21,10 @@ class TagsTableViewCell: UITableViewCell {
 }
 
 extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -29,7 +32,7 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 10.0
         
-        cell.label.text = "goose"
+        cell.label.text = labelTexts[indexPath.row]
 //        cell.image.image = UIImage(named:"goose")!
         
         return cell

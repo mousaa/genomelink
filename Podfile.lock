@@ -1,4 +1,5 @@
 PODS:
+  - Eureka (4.1.1)
   - Firebase/Core (5.1.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.0.1)
@@ -31,12 +32,14 @@ PODS:
   - OAuthSwift (1.2.2)
 
 DEPENDENCIES:
+  - Eureka
   - Firebase/Core
   - Firebase/Database
   - OAuthSwift (from `https://github.com/OAuthSwift/OAuthSwift.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Eureka
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -56,6 +59,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/OAuthSwift/OAuthSwift.git
 
 SPEC CHECKSUMS:
+  Eureka: b88fb930e42c79f8c03c373d0fcdc28c1d6c50ed
   Firebase: e08fb0795f35707aeb1d8a715c731c45bdf6fd56
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
   FirebaseCore: b81044df1044c0857a0737c6324678b72d4f7f00
@@ -66,6 +70,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   OAuthSwift: 6ab6259b5c79c6a07d455d8dfaddad6058b2b5c3
 
-PODFILE CHECKSUM: 0c9fcd579ed7b4be9c666adb6a4d61220b65d7b0
+PODFILE CHECKSUM: e40014e09245c74585c909ef172b904c6044b830
 
 COCOAPODS: 1.5.3

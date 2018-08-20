@@ -30,22 +30,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="15" sectionInsetReference="layoutMargins" id="LaK-K3-DgN">
-                                                <size key="itemSize" width="170" height="70"/>
+                                                <size key="itemSize" width="185" height="70"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagsCell" id="bUA-au-cA0" customClass="TagsViewCell" customModule="genomelinks" customModuleProvider="target">
-                                                    <rect key="frame" x="13" y="7.5" width="170" height="70"/>
+                                                    <rect key="frame" x="13" y="7.5" width="185" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="70"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="70"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-le-T6W">
-                                                                <rect key="frame" x="20" y="21" width="130" height="29"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                                <rect key="frame" x="33" y="22.5" width="119.5" height="26.5"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -56,7 +56,7 @@
                                                         <constraint firstItem="2E9-le-T6W" firstAttribute="centerY" secondItem="bUA-au-cA0" secondAttribute="centerY" id="XX4-58-b1E"/>
                                                         <constraint firstItem="2E9-le-T6W" firstAttribute="centerX" secondItem="bUA-au-cA0" secondAttribute="centerX" id="tkl-xA-u3F"/>
                                                     </constraints>
-                                                    <size key="customSize" width="170" height="70"/>
+                                                    <size key="customSize" width="185" height="70"/>
                                                     <connections>
                                                         <outlet property="label" destination="2E9-le-T6W" id="Bou-hS-TXZ"/>
                                                     </connections>
