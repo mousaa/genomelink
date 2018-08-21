@@ -24,18 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let queryArray = urlString.split(separator:"/")
         print(queryArray)
         
-//        let query = ["eye-color", "beard-thickness", "morning-person"]
-//
-//        for key in query {
-//            let url: String = "https://genomelink.io/v1/enterprise/reports/" + key + "/?population=european"
-//            var request = URLRequest(url:  NSURL(string: url)! as URL)
-//            request.httpMethod = "POST"
-//            request.setValue("Bearer \(queryArray[1])", forHTTPHeaderField: "Authorization")
-//
-//            Alamofire.request(request).responseJSON { (responseObject) -> Void in
-//                print(responseObject)
-//            }
-//        }
+        let defaults = UserDefaults.standard
+        defaults.set(queryArray[1], forKey: "intelligence")
+        defaults.set(queryArray[2], forKey: "depression")
+        defaults.set(queryArray[3], forKey: "openness")
+        defaults.set(queryArray[4], forKey: "extraversion")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainNC = storyboard.instantiateViewController(withIdentifier: "mainNavController")
