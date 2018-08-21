@@ -7,18 +7,35 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class AddEvent: UIViewController {
-    
-    @IBAction func callAPI(_ sender: Any) {
+    @IBOutlet weak var eventName: UITextField!
+    @IBOutlet weak var eventLocation: UITextField!
+    @IBOutlet weak var eventDescription: UITextField!
+    @IBOutlet weak var eventDate: UIDatePicker! {
+        didSet {
+            eventDate.minimumDate = Date()
+        }
     }
     
     override func viewDidLoad() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEvent))
         navigationItem.rightBarButtonItem?.title = "Create"
-        navigationItem.title = "Add Event"
-        navigationItem.backBarButtonItem = UIBarButtonItem()
-        navigationItem.backBarButtonItem?.title = "Cancel"
+    }
+    
+    @objc func addEvent() {
+        Database.database()
+        .reference()
+        .child("events")
+        .childByAutoId()
+        .updateChildValues([
+            "name": eventName.text!,
+            "description": eventDescription.text!,
+            "location": eventLocation.text!
+        ])
+        
+        navigationController?.popViewController(animated: true)
     }
 }
 

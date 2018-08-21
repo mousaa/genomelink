@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9mX-ki-3tU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9mX-ki-3tU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -111,15 +111,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="LNn-pK-x4H">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ArL-NQ-4Na">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ArL-NQ-4Na">
                             <connections>
                                 <segue destination="ylJ-Gw-y17" kind="show" id="YiV-fv-BRe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="ylJ-Gw-y17" kind="show" id="lBH-8j-92R"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELE-GS-Sge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,7 +170,4 @@
             <point key="canvasLocation" x="622" y="40"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="lBH-8j-92R"/>
-    </inferredMetricsTieBreakers>
 </document>

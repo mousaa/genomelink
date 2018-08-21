@@ -8,11 +8,61 @@
 
 import UIKit
 import OAuthSwift
+import FirebaseDatabase
+
+class Event {
+    let location: String
+    let description: String
+    let id: String
+    let name: String
+    let date: String
+    
+    init(location: String, description: String, id: String, name: String, date:String) {
+        self.id = id
+        self.location = location
+        self.description = description
+        self.name = name
+        self.date = date
+        print("\(id)-> \(name)")
+    }
+    
+    convenience init? (snapshot: DataSnapshot){
+        guard
+            let val = snapshot.value as? [String:Any],
+            let name = val["name"] as? String,
+            let description = val["description"] as? String,
+            let location = val["location"] as? String
+//            let date = val["date"] as? String
+            else {
+                return nil
+            }
+        let id = snapshot.key
+        self.init(location: location, description: description, id: id, name: name, date: "")
+    }
+}
 
 class RootViewController: UITableViewController {
+    private var allEvents: [Event] = []
+    private var events: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+        tableView.tableFooterView = UIView()
+    }
+    
+    func setup() {
+        Database
+        .database()
+        .reference(withPath: "events")
+        .observe(.value) { (snapshot) in
+            // snapshot.children
+            self.events = []
+            snapshot.children.forEach({ (data) in
+                self.events.append(Event(snapshot: data as! DataSnapshot)!)
+            })
+            self.tableView.reloadData()
+        }
     }
     
 }
@@ -65,7 +115,6 @@ extension RootViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Tags", for: indexPath) as! TagsTableViewCell
             cell.setCell()
@@ -73,9 +122,9 @@ extension RootViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Event", for: indexPath) as! EventTableViewCell
-        
-        cell.eventName.text = "hehexd"
-        cell.eventDetail.text = "hehehehehehhehe"
+        let event = events[indexPath.row]
+        cell.eventName.text = event.name
+        cell.eventDetail.text = event.description
         
         return cell
     }
@@ -84,6 +133,6 @@ extension RootViewController {
         if section == 0 {
             return 1
         }
-        return 5
+        return events.count
     }
 }
