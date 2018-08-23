@@ -43,6 +43,27 @@ class EventPageViewController: UIViewController {
             "\(event!.id)" : true
         ])
         
+        let defaults = UserDefaults.standard
+        
+        let intelligence = (event?.intelligence)! + Int(defaults.string(forKey: "intelligence")!)!
+        let depression = (event?.depression)! + Int(defaults.string(forKey: "depression")!)!
+        let openness = (event?.openness)! + Int(defaults.string(forKey: "openness")!)!
+        let extraversion = (event?.extraversion)! + Int(defaults.string(forKey: "extraversion")!)!
+        event?.total += 1
+        
+        Database
+            .database()
+            .reference(withPath: "events")
+            .child((event?.id)!)
+            .updateChildValues([
+                "total" : (event?.total)!,
+                "intelligence": intelligence,
+                "depression": depression,
+                "openness": openness,
+                "extraversion": extraversion
+            ])
+        
+        numberOfPeopleAttending.text = "\(event?.total ?? 0) attending"
     }
     
     var event: Event?
