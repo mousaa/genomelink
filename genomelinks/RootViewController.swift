@@ -10,14 +10,33 @@ import UIKit
 import OAuthSwift
 import FirebaseDatabase
 
-class RootViewController: UITableViewController {
+class RootViewController: UITableViewController, TagsTableViewCellDelegate {
+    
+    
     private var allEvents: [Event] = []
     private var events: [Event] = []
+    private var selectedCategory : String? = nil
+    weak var delegate: TagsTableViewCellDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         tableView.tableFooterView = UIView()
+    }
+    
+    private func updateView(){
+        if self.selectedCategory == nil {
+            self.events = allEvents
+        } else if self.selectedCategory == "depression" {
+            self.events = self.allEvents.sorted(by: { $0.depression > $1.depression })
+        } else if self.selectedCategory == "extroversion" {
+            self.events = self.allEvents.sorted(by: { $0.extraversion > $1.extraversion })
+        } else if self.selectedCategory == "intelligence" {
+            self.events = self.allEvents.sorted(by: { $0.intelligence > $1.intelligence })
+        } else if self.selectedCategory == "openness" {
+            self.events = self.allEvents.sorted(by: { $0.openness > $1.openness })
+        }
+        self.tableView.reloadData()
     }
     
     func setup() {        
@@ -26,13 +45,12 @@ class RootViewController: UITableViewController {
         .reference(withPath: "events")
         .observe(.value) { (snapshot) in
             // snapshot.children
-            self.events = []
+            self.allEvents = []
             snapshot.children.forEach({ (data) in
-                self.events.append(Event(snapshot: data as! DataSnapshot)!)
+                self.allEvents.append(Event(snapshot: data as! DataSnapshot)!)
             })
-            self.tableView.reloadData()
+            self.updateView()
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,6 +62,14 @@ class RootViewController: UITableViewController {
         }
     }
     
+    func updateSelectedCategory(_ category: String?) {
+        if selectedCategory == category {
+            selectedCategory = nil
+        } else {
+            selectedCategory = category!
+        }
+        updateView()
+    }
 }
 
 @IBDesignable class PaddingLabel: UILabel {

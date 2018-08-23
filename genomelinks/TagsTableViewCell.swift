@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol TagsTableViewCellDelegate: class {
+    func updateSelectedCategory(_ category: String?)
+}
+
 class TagsTableViewCell: UITableViewCell {
     
     var tagNames = ["DEPRESSION", "EXTRAVERSION", "INTELLIGENCE", "OPENNESS"]
+    weak var delegate: TagsTableViewCellDelegate?
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -35,5 +40,10 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
 //        cell.image.image = UIImage(named:"goose")!
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(tagNames[indexPath.row])
+        delegate?.updateSelectedCategory(tagNames[indexPath.row].lowercased())
     }
 }
