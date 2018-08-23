@@ -9,6 +9,8 @@
 import UIKit
 
 class TagsTableViewCell: UITableViewCell {
+    
+    var tagNames = ["DEPRESSION", "EXTRAVERSION", "INTELLIGENCE", "OPENNESS"]
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -29,7 +31,7 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 10.0
         
-        cell.label.text = "goose"
+        cell.label.text = tagNames[indexPath.row]
 //        cell.image.image = UIImage(named:"goose")!
         
         return cell
