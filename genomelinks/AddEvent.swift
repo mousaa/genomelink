@@ -38,6 +38,7 @@ class AddEvent: UIViewController {
             "name": eventName.text!,
             "description": eventDescription.text!,
             "location": eventLocation.text!,
+            "date": "\(eventDate.date)",
             "intelligence": intelligence,
             "depression": depression,
             "openness": openness,

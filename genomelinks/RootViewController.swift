@@ -10,52 +10,6 @@ import UIKit
 import OAuthSwift
 import FirebaseDatabase
 
-class Event {
-    let location: String
-    let description: String
-    let id: String
-    let name: String
-    let date: String
-    let intelligence: Int
-    let depression: Int
-    let openness: Int
-    let extraversion: Int
-    let total: Int
-    
-    init(location: String, description: String, id: String, name: String, date: String, intelligence: Int,  depression: Int,openness: Int, extraversion: Int, total: Int) {
-        self.id = id
-        self.location = location
-        self.description = description
-        self.name = name
-        self.date = date
-        self.intelligence = intelligence
-        self.depression = depression
-        self.openness = openness
-        self.extraversion = extraversion
-        self.total = total
-        print("\(id)-> \(name)")
-    }
-    
-    convenience init? (snapshot: DataSnapshot){
-        guard
-            let val = snapshot.value as? [String:Any],
-            let name = val["name"] as? String,
-            let description = val["description"] as? String,
-            let location = val["location"] as? String,
-            let intelligence = val["intelligence"] as? Int,
-            let depression = val["depression"] as? Int,
-            let openness = val["openness"] as? Int,
-            let extraversion = val["extraversion"] as? Int,
-            let total = val["total"] as? Int
-//            let date = val["date"] as? String
-            else {
-                return nil
-            }
-        let id = snapshot.key
-        self.init(location: location, description: description, id: id, name: name, date: "", intelligence: intelligence, depression: depression, openness: openness, extraversion: extraversion, total: total)
-    }
-}
-
 class RootViewController: UITableViewController {
     private var allEvents: [Event] = []
     private var events: [Event] = []
@@ -66,7 +20,7 @@ class RootViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
     
-    func setup() {
+    func setup() {        
         Database
         .database()
         .reference(withPath: "events")
@@ -78,14 +32,24 @@ class RootViewController: UITableViewController {
             })
             self.tableView.reloadData()
         }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "eventPage") {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let vc = segue.destination as! EventPageViewController
+                vc.event = events[indexPath.row]
+            }
+        }
     }
     
 }
 
 @IBDesignable class PaddingLabel: UILabel {
     
-    @IBInspectable var topInset: CGFloat = 0.0
-    @IBInspectable var bottomInset: CGFloat = 0.0
+    @IBInspectable var topInset: CGFloat = 8.0
+    @IBInspectable var bottomInset: CGFloat = 8.0
     @IBInspectable var leftInset: CGFloat = 8.0
     @IBInspectable var rightInset: CGFloat = 0.0
     
@@ -149,5 +113,9 @@ extension RootViewController {
             return 1
         }
         return events.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
     }
 }

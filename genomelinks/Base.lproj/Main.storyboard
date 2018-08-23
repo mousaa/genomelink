@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="43S-dx-Rc2">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="43S-dx-Rc2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="15" sectionInsetReference="layoutMargins" id="LaK-K3-DgN">
@@ -101,7 +101,7 @@
                                 <connections>
                                     <outlet property="eventDetail" destination="gqv-Pa-d5v" id="G0Y-Zd-tEt"/>
                                     <outlet property="eventName" destination="3gH-r7-3T8" id="iOB-aN-zN3"/>
-                                    <segue destination="OeQ-Lf-bi1" kind="show" id="25O-cr-jul"/>
+                                    <segue destination="OeQ-Lf-bi1" kind="show" identifier="eventPage" id="25O-cr-jul"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -120,7 +120,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELE-GS-Sge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.5999999999999" y="29.23538230884558"/>
+            <point key="canvasLocation" x="1542" y="33"/>
         </scene>
         <!--AddEvent-->
         <scene sceneID="vDK-Q5-LGe">
@@ -128,7 +128,7 @@
                 <viewControllerPlaceholder storyboardName="AddEvent" id="ylJ-Gw-y17" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMp-xn-e0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362" y="-184"/>
+            <point key="canvasLocation" x="2074" y="-471"/>
         </scene>
         <!--Event-->
         <scene sceneID="foz-Df-l6L">
@@ -136,7 +136,7 @@
                 <viewControllerPlaceholder storyboardName="Event" id="OeQ-Lf-bi1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0J-V5-5qD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2369" y="16"/>
+            <point key="canvasLocation" x="2278" y="154"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="sE9-I4-ILj">

@@ -12,6 +12,8 @@
 		1634706C21222E5400C8BFED /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634706B21222E5400C8BFED /* TagsTableViewCell.swift */; };
 		1634706E21222F6400C8BFED /* TagsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634706D21222F6400C8BFED /* TagsViewCell.swift */; };
 		1634707021222FBE00C8BFED /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634706F21222FBE00C8BFED /* EventTableViewCell.swift */; };
+		94245422212E3BB30056F828 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94245421212E3BB30056F828 /* Event.swift */; };
+		94245424212E3FD00056F828 /* EventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94245423212E3FD00056F828 /* EventPageViewController.swift */; };
 		94471000211CE9B2006E1418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94470FFF211CE9B2006E1418 /* GoogleService-Info.plist */; };
 		9464B246211521A40010AE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B245211521A40010AE19 /* AppDelegate.swift */; };
 		9464B248211521A40010AE19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B247211521A40010AE19 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		1634706D21222F6400C8BFED /* TagsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewCell.swift; sourceTree = "<group>"; };
 		1634706F21222FBE00C8BFED /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		7D356C58CB852CE5A15B2421 /* Pods-genomelinks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genomelinks.release.xcconfig"; path = "Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks.release.xcconfig"; sourceTree = "<group>"; };
+		94245421212E3BB30056F828 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		94245423212E3FD00056F828 /* EventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageViewController.swift; sourceTree = "<group>"; };
 		94470FFF211CE9B2006E1418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9464B242211521A40010AE19 /* genomelinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = genomelinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464B245211521A40010AE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				1634706D21222F6400C8BFED /* TagsViewCell.swift */,
 				1634706F21222FBE00C8BFED /* EventTableViewCell.swift */,
 				94D6F799212237E60003229F /* AddEvent.swift */,
+				94245421212E3BB30056F828 /* Event.swift */,
+				94245423212E3FD00056F828 /* EventPageViewController.swift */,
 			);
 			path = genomelinks;
 			sourceTree = "<group>";
@@ -241,10 +247,12 @@
 				1634706C21222E5400C8BFED /* TagsTableViewCell.swift in Sources */,
 				1634706E21222F6400C8BFED /* TagsViewCell.swift in Sources */,
 				9464B248211521A40010AE19 /* ViewController.swift in Sources */,
+				94245422212E3BB30056F828 /* Event.swift in Sources */,
 				9464B246211521A40010AE19 /* AppDelegate.swift in Sources */,
 				BD5CD9B521235E7E0087F5E0 /* LoginViewController.swift in Sources */,
 				1634706A21222B8F00C8BFED /* RootViewController.swift in Sources */,
 				94D6F79A212237E60003229F /* AddEvent.swift in Sources */,
+				94245424212E3FD00056F828 /* EventPageViewController.swift in Sources */,
 				1634707021222FBE00C8BFED /* EventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

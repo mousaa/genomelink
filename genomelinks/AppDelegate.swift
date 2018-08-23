@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaults.set(queryArray[2], forKey: "depression")
         defaults.set(queryArray[3], forKey: "openness")
         defaults.set(queryArray[4], forKey: "extraversion")
+        defaults.set(queryArray[5], forKey: "uid")
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainNC = storyboard.instantiateViewController(withIdentifier: "mainNavController")
