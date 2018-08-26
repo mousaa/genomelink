@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0412E8472864F77D444B931B /* Pods_genomelinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CA633E5625DAABA8005E9 /* Pods_genomelinks.framework */; };
+		1634706A21222B8F00C8BFED /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634706921222B8F00C8BFED /* RootViewController.swift */; };
+		1634706C21222E5400C8BFED /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634706B21222E5400C8BFED /* TagsTableViewCell.swift */; };
+		1634706E21222F6400C8BFED /* TagsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634706D21222F6400C8BFED /* TagsViewCell.swift */; };
+		1634707021222FBE00C8BFED /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634706F21222FBE00C8BFED /* EventTableViewCell.swift */; };
+		94245422212E3BB30056F828 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94245421212E3BB30056F828 /* Event.swift */; };
+		94245424212E3FD00056F828 /* EventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94245423212E3FD00056F828 /* EventPageViewController.swift */; };
 		94471000211CE9B2006E1418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94470FFF211CE9B2006E1418 /* GoogleService-Info.plist */; };
 		9464B246211521A40010AE19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B245211521A40010AE19 /* AppDelegate.swift */; };
 		9464B248211521A40010AE19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9464B247211521A40010AE19 /* ViewController.swift */; };
@@ -16,10 +22,18 @@
 		9464B250211521A70010AE19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9464B24E211521A70010AE19 /* LaunchScreen.storyboard */; };
 		94C32BA0211CECE20022FF20 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C32B9F211CECE20022FF20 /* Event.storyboard */; };
 		94C32BA2211CED070022FF20 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C32BA1211CED070022FF20 /* AddEvent.storyboard */; };
+		94D6F79A212237E60003229F /* AddEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6F799212237E60003229F /* AddEvent.swift */; };
+		BD5CD9B521235E7E0087F5E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5CD9B421235E7E0087F5E0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1634706921222B8F00C8BFED /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		1634706B21222E5400C8BFED /* TagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		1634706D21222F6400C8BFED /* TagsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewCell.swift; sourceTree = "<group>"; };
+		1634706F21222FBE00C8BFED /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		7D356C58CB852CE5A15B2421 /* Pods-genomelinks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genomelinks.release.xcconfig"; path = "Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks.release.xcconfig"; sourceTree = "<group>"; };
+		94245421212E3BB30056F828 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		94245423212E3FD00056F828 /* EventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageViewController.swift; sourceTree = "<group>"; };
 		94470FFF211CE9B2006E1418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9464B242211521A40010AE19 /* genomelinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = genomelinks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9464B245211521A40010AE19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +44,9 @@
 		9464B251211521A70010AE19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C32B9F211CECE20022FF20 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		94C32BA1211CED070022FF20 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
+		94D6F799212237E60003229F /* AddEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvent.swift; sourceTree = "<group>"; };
 		A16CA633E5625DAABA8005E9 /* Pods_genomelinks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_genomelinks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD5CD9B421235E7E0087F5E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C5AC4582D495D8B5FB5118D5 /* Pods-genomelinks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-genomelinks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,12 +86,20 @@
 				9464B245211521A40010AE19 /* AppDelegate.swift */,
 				9464B247211521A40010AE19 /* ViewController.swift */,
 				9464B249211521A40010AE19 /* Main.storyboard */,
+				BD5CD9B421235E7E0087F5E0 /* LoginViewController.swift */,
 				9464B24C211521A70010AE19 /* Assets.xcassets */,
 				9464B24E211521A70010AE19 /* LaunchScreen.storyboard */,
 				9464B251211521A70010AE19 /* Info.plist */,
 				94470FFF211CE9B2006E1418 /* GoogleService-Info.plist */,
 				94C32B9F211CECE20022FF20 /* Event.storyboard */,
 				94C32BA1211CED070022FF20 /* AddEvent.storyboard */,
+				1634706921222B8F00C8BFED /* RootViewController.swift */,
+				1634706B21222E5400C8BFED /* TagsTableViewCell.swift */,
+				1634706D21222F6400C8BFED /* TagsViewCell.swift */,
+				1634706F21222FBE00C8BFED /* EventTableViewCell.swift */,
+				94D6F799212237E60003229F /* AddEvent.swift */,
+				94245421212E3BB30056F828 /* Event.swift */,
+				94245423212E3FD00056F828 /* EventPageViewController.swift */,
 			);
 			path = genomelinks;
 			sourceTree = "<group>";
@@ -194,13 +218,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-genomelinks/Pods-genomelinks-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -216,8 +244,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1634706C21222E5400C8BFED /* TagsTableViewCell.swift in Sources */,
+				1634706E21222F6400C8BFED /* TagsViewCell.swift in Sources */,
 				9464B248211521A40010AE19 /* ViewController.swift in Sources */,
+				94245422212E3BB30056F828 /* Event.swift in Sources */,
 				9464B246211521A40010AE19 /* AppDelegate.swift in Sources */,
+				BD5CD9B521235E7E0087F5E0 /* LoginViewController.swift in Sources */,
+				1634706A21222B8F00C8BFED /* RootViewController.swift in Sources */,
+				94D6F79A212237E60003229F /* AddEvent.swift in Sources */,
+				94245424212E3FD00056F828 /* EventPageViewController.swift in Sources */,
+				1634707021222FBE00C8BFED /* EventTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

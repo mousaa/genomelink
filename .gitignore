@@ -12,5 +12,5 @@ project.xcworkspace/
 xcuserdata/
 
 # Podfiles
-Pods/*
+Pods/
 Pods/Pods.xcodeproj/project.pbxproj

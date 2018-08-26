@@ -8,10 +8,34 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        if url.host == nil
+        {
+            return true;
+        }
+        let urlString = url.absoluteString
+        let queryArray = urlString.split(separator:"/")
+        print(queryArray)
+        
+        let defaults = UserDefaults.standard
+        defaults.set(queryArray[1], forKey: "intelligence")
+        defaults.set(queryArray[2], forKey: "depression")
+        defaults.set(queryArray[3], forKey: "openness")
+        defaults.set(queryArray[4], forKey: "extraversion")
+        defaults.set(queryArray[5], forKey: "uid")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainNC = storyboard.instantiateViewController(withIdentifier: "mainNavController")
+        window?.rootViewController = mainNC
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
