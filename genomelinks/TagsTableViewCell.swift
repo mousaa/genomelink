@@ -35,13 +35,24 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagsCell", for: indexPath) as! TagsViewCell
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 10.0
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.black.cgColor
         
         cell.label.text = tagNames[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(tagNames[indexPath.row].lowercased())
+        let cell = collectionView.cellForItem(at: indexPath)
+        if cell?.backgroundColor == UIColor.lightGray { // if selected
+            cell?.backgroundColor = UIColor.white
+            delegate?.updateSelectedCategory(nil)
+        } else { // if not selected
+            for c in collectionView.visibleCells {
+                c.backgroundColor = UIColor.white
+            }
+            cell?.backgroundColor = UIColor.lightGray
+        }
         delegate?.updateSelectedCategory(tagNames[indexPath.row].lowercased())
     }
 }

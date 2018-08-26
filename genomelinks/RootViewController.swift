@@ -63,7 +63,7 @@ class RootViewController: UITableViewController, TagsTableViewCellDelegate {
     }
     
     func updateSelectedCategory(_ category: String?) {
-        if selectedCategory == category {
+        if category == nil {
             selectedCategory = nil
         } else {
             selectedCategory = category!
