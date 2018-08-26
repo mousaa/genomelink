@@ -37,13 +37,11 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.layer.cornerRadius = 10.0
         
         cell.label.text = tagNames[indexPath.row]
-//        cell.image.image = UIImage(named:"goose")!
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(tagNames[indexPath.row])
+//        print(tagNames[indexPath.row])
         delegate?.updateSelectedCategory(tagNames[indexPath.row].lowercased())
     }
 }
