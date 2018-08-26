@@ -9,28 +9,40 @@
 import UIKit
 import FirebaseDatabase
 
-class EventPageViewController: UIViewController {
-    @IBOutlet weak var location: UILabel! {
-        didSet {
-            location.text = event?.location ?? ""
-        }
+class eventStatsTableViewCell: UITableViewCell {
+    @IBOutlet weak var genomeName: UILabel!
+    @IBOutlet weak var genomeCount: UILabel!
+}
+
+
+class EventPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let types = ["depression", "intelligence", "openness", "extraversion"]
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return types.count
     }
-    @IBOutlet weak var date: UILabel! {
-        didSet {
-            date.text = event?.date
-        }
-    }
-    @IBOutlet weak var numberOfPeopleAttending: UILabel! {
-        didSet {
-            numberOfPeopleAttending.text = "\(event?.total ?? 0) attending"
-        }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = statsTableView.dequeueReusableCell(withIdentifier: "statsTableCell") as! eventStatsTableViewCell
+        cell.genomeName.text = types[indexPath.row]
         
-    }
-    @IBOutlet weak var eventName: UILabel! {
-        didSet {
-            eventName.text = event?.name ?? ""
+        switch indexPath.row {
+        case 0:
+            cell.genomeCount.text = "\(event?.depression ?? 0)"
+        case 1:
+            cell.genomeCount.text = "\(event?.intelligence ?? 0)"
+        case 2:
+            cell.genomeCount.text = "\(event?.openness ?? 0)"
+        default:
+            cell.genomeCount.text = "\(event?.extraversion ?? 0)"
         }
+        return cell
     }
+    
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var numberOfPeopleAttending: UILabel!
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var statsTableView: UITableView!
     
     @IBAction func attendEventButton(_ sender: UIButton) {
         // add user to users object
@@ -45,10 +57,10 @@ class EventPageViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         
-        let intelligence = (event?.intelligence)! + Int(defaults.string(forKey: "intelligence")!)!
-        let depression = (event?.depression)! + Int(defaults.string(forKey: "depression")!)!
-        let openness = (event?.openness)! + Int(defaults.string(forKey: "openness")!)!
-        let extraversion = (event?.extraversion)! + Int(defaults.string(forKey: "extraversion")!)!
+        event?.intelligence = (event?.intelligence)! + Int(defaults.string(forKey: "intelligence")!)!
+        event?.depression = (event?.depression)! + Int(defaults.string(forKey: "depression")!)!
+        event?.openness = (event?.openness)! + Int(defaults.string(forKey: "openness")!)!
+        event?.extraversion = (event?.extraversion)! + Int(defaults.string(forKey: "extraversion")!)!
         event?.total += 1
         
         Database
@@ -57,12 +69,12 @@ class EventPageViewController: UIViewController {
             .child((event?.id)!)
             .updateChildValues([
                 "total" : (event?.total)!,
-                "intelligence": intelligence,
-                "depression": depression,
-                "openness": openness,
-                "extraversion": extraversion
+                "intelligence": (event?.intelligence)!,
+                "depression": (event?.depression)!,
+                "openness": (event?.openness)!,
+                "extraversion": (event?.extraversion)!
             ])
-        
+        statsTableView.reloadData()
         numberOfPeopleAttending.text = "\(event?.total ?? 0) attending"
     }
     
@@ -70,5 +82,21 @@ class EventPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        statsTableView.tableFooterView = UIView()
+        let formatter = DateFormatter()
+        formatter.isLenient = true
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        let myDate = formatter.date(from: (event?.date)!)!
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM dd\n'at' h a"
+        let displayDate = dateFormatter.string(from: myDate)
+        
+        location.text = event?.location ?? ""
+        date.text = displayDate
+        numberOfPeopleAttending.text = "\(event?.total ?? 0) attending"
+        eventName.text = event?.name ?? ""
+
     }
 }

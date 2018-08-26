@@ -15,10 +15,10 @@ class Event {
     let id: String
     let name: String
     let date: String
-    let intelligence: Int
-    let depression: Int
-    let openness: Int
-    let extraversion: Int
+    var intelligence: Int
+    var depression: Int
+    var openness: Int
+    var extraversion: Int
     var total: Int
     
     init(location: String, description: String, id: String, name: String, date: String, intelligence: Int,  depression: Int,openness: Int, extraversion: Int, total: Int) {
