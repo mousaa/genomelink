@@ -41,7 +41,7 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print(tagNames[indexPath.row])
+        print(tagNames[indexPath.row].lowercased())
         delegate?.updateSelectedCategory(tagNames[indexPath.row].lowercased())
     }
 }
