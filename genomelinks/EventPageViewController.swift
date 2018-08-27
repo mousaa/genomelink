@@ -41,6 +41,7 @@ class EventPageViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var numberOfPeopleAttending: UILabel!
+    @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var statsTableView: UITableView!
     
@@ -97,6 +98,7 @@ class EventPageViewController: UIViewController, UITableViewDelegate, UITableVie
         date.text = displayDate
         numberOfPeopleAttending.text = "\(event?.total ?? 0) attending"
         eventName.text = event?.name ?? ""
+        eventDescription.text = event?.description ?? ""
 
     }
 }
