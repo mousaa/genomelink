@@ -28,13 +28,54 @@ class RootViewController: UITableViewController, TagsTableViewCellDelegate {
         if self.selectedCategory == nil {
             self.events = allEvents
         } else if self.selectedCategory == "depression" {
-            self.events = self.allEvents.sorted(by: { $0.depression > $1.depression })
-        } else if self.selectedCategory == "extroversion" {
-            self.events = self.allEvents.sorted(by: { $0.extraversion > $1.extraversion })
+            self.events = self.allEvents.sorted(by: {
+                var depression : Double = Double($0.depression)
+                depression = depression / Double($0.total)
+                let avg = Double(String(format: "%.1f", depression))
+                
+                var depression0 : Double = Double($1.depression)
+                depression0 = depression0 / Double($1.total)
+                let avg0 = Double(String(format: "%.1f", depression0))
+                
+                return avg! > avg0!
+                
+            })
+        } else if self.selectedCategory == "extraversion" {
+            self.events = self.allEvents.sorted(by: {
+                var extraversion : Double = Double($0.extraversion)
+                extraversion = extraversion / Double($0.total)
+                let avg = Double(String(format: "%.1f", extraversion))
+                
+                var extraversion0 : Double = Double($1.extraversion)
+                extraversion0 = extraversion0 / Double($1.total)
+                let avg0 = Double(String(format: "%.1f", extraversion0))
+                
+                return avg! > avg0!
+            })
         } else if self.selectedCategory == "intelligence" {
-            self.events = self.allEvents.sorted(by: { $0.intelligence > $1.intelligence })
+            self.events = self.allEvents.sorted(by: {
+                var intelligence : Double = Double($0.intelligence)
+                intelligence = intelligence / Double($0.total)
+                let avg = Double(String(format: "%.1f", intelligence))
+                
+                var intelligence0 : Double = Double($1.intelligence)
+                intelligence0 = intelligence0 / Double($1.total)
+                let avg0 = Double(String(format: "%.1f", intelligence0))
+                
+                return avg! > avg0!
+            })
         } else if self.selectedCategory == "openness" {
-            self.events = self.allEvents.sorted(by: { $0.openness > $1.openness })
+            self.events = self.allEvents.sorted(by: {
+                var openness : Double = Double($0.openness)
+                openness = openness / Double($0.total)
+                let avg = Double(String(format: "%.1f", openness))
+                
+                var openness0 : Double = Double($1.openness)
+                openness0 = openness0 / Double($1.total)
+                let avg0 = Double(String(format: "%.1f", openness0))
+                
+                return avg! > avg0!
+            })
         }
         self.tableView.reloadData()
     }

@@ -39,6 +39,7 @@ extension TagsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.layer.borderColor = UIColor.black.cgColor
         
         cell.label.text = tagNames[indexPath.row]
+        cell.backgroundColor = UIColor.white
         return cell
     }
     

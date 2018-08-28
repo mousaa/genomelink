@@ -16,7 +16,7 @@ class eventStatsTableViewCell: UITableViewCell {
 
 
 class EventPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let types = ["depression", "intelligence", "openness", "extraversion"]
+    let types = ["Depression", "Intelligence", "Openness", "Extraversion"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return types.count
     }
@@ -27,13 +27,25 @@ class EventPageViewController: UIViewController, UITableViewDelegate, UITableVie
         
         switch indexPath.row {
         case 0:
-            cell.genomeCount.text = "\(event?.depression ?? 0)"
+            var depression : Double = Double(event?.depression ?? 0)
+            depression = depression / Double((event?.total)!)
+            let avg = String(format: "%.1f", depression)
+            cell.genomeCount.text = "\(avg)"
         case 1:
-            cell.genomeCount.text = "\(event?.intelligence ?? 0)"
+            var intelligence : Double = Double(event?.intelligence ?? 0)
+            intelligence = intelligence / Double((event?.total)!)
+            let avg = String(format: "%.1f", intelligence)
+            cell.genomeCount.text = "\(avg)"
         case 2:
-            cell.genomeCount.text = "\(event?.openness ?? 0)"
+            var openness : Double = Double(event?.openness ?? 0)
+            openness = openness / Double((event?.total)!)
+            let avg = String(format: "%.1f", openness)
+            cell.genomeCount.text = "\(avg)"
         default:
-            cell.genomeCount.text = "\(event?.extraversion ?? 0)"
+            var extraversion : Double = Double(event?.extraversion ?? 0)
+            extraversion = extraversion / Double((event?.total)!)
+            let avg = String(format: "%.1f", extraversion)
+            cell.genomeCount.text = "\(avg)"
         }
         return cell
     }
@@ -45,37 +57,44 @@ class EventPageViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var statsTableView: UITableView!
     
     @IBAction func attendEventButton(_ sender: UIButton) {
-        // add user to users object
-        Database
-        .database()
-        .reference(withPath: "users")
-        .child(UserDefaults.standard.string(forKey: "uid")!)
-        .child("events")
-        .updateChildValues([
-            "\(event!.id)" : true
-        ])
         
         let defaults = UserDefaults.standard
         
-        event?.intelligence = (event?.intelligence)! + Int(defaults.string(forKey: "intelligence")!)!
-        event?.depression = (event?.depression)! + Int(defaults.string(forKey: "depression")!)!
-        event?.openness = (event?.openness)! + Int(defaults.string(forKey: "openness")!)!
-        event?.extraversion = (event?.extraversion)! + Int(defaults.string(forKey: "extraversion")!)!
-        event?.total += 1
+        if defaults.object(forKey: event!.id) == nil {
+            defaults.set(true, forKey: event!.id)
+            // add user to users object
+            Database
+                .database()
+                .reference(withPath: "users")
+                .child(defaults.string(forKey: "uid")!)
+                .child("events")
+                .updateChildValues([
+                    "\(event!.id)" : true
+                    ])
+            
+            
+            event?.intelligence = (event?.intelligence)! + Int(defaults.string(forKey: "intelligence")!)!
+            event?.depression = (event?.depression)! + Int(defaults.string(forKey: "depression")!)!
+            event?.openness = (event?.openness)! + Int(defaults.string(forKey: "openness")!)!
+            event?.extraversion = (event?.extraversion)! + Int(defaults.string(forKey: "extraversion")!)!
+            event?.total += 1
+            
+            Database
+                .database()
+                .reference(withPath: "events")
+                .child((event?.id)!)
+                .updateChildValues([
+                    "total" : (event?.total)!,
+                    "intelligence": (event?.intelligence)!,
+                    "depression": (event?.depression)!,
+                    "openness": (event?.openness)!,
+                    "extraversion": (event?.extraversion)!
+                    ])
+            statsTableView.reloadData()
+            numberOfPeopleAttending.text = "\(event?.total ?? 0) attending"
+        }
         
-        Database
-            .database()
-            .reference(withPath: "events")
-            .child((event?.id)!)
-            .updateChildValues([
-                "total" : (event?.total)!,
-                "intelligence": (event?.intelligence)!,
-                "depression": (event?.depression)!,
-                "openness": (event?.openness)!,
-                "extraversion": (event?.extraversion)!
-            ])
-        statsTableView.reloadData()
-        numberOfPeopleAttending.text = "\(event?.total ?? 0) attending"
+        
     }
     
     var event: Event?
